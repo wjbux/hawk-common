@@ -1,28 +1,18 @@
-export class User {
+export class FirebaseUser {
 	private _id: string;
 	private _fName: string;
 	private _lName: string;
 	private _displayName: string;
 	private _email: string;
 	private _photoURL: string;
-	private _stripeKey: string;
 
-	constructor(
-		id: string,
-		fName: string,
-		lName: string,
-		displayName: string,
-		email: string,
-		photoURL: string,
-		stripeKey: string
-	) {
+	constructor(id: string, fName: string, lName: string, displayName: string, email: string, photoURL: string) {
 		this._id = id;
 		this._fName = fName;
 		this._lName = lName;
 		this._displayName = displayName;
 		this._email = email;
 		this._photoURL = photoURL;
-		this._stripeKey = stripeKey;
 	}
 
 	public toJsonString(): string {
@@ -89,13 +79,5 @@ export class User {
 	/** Set photo URL */
 	public set photoURL(photoURL: string) {
 		this._photoURL = photoURL;
-	}
-
-	public get stripeKey(): string {
-		return this._stripeKey;
-	}
-
-	public set stripeKey(value: string) {
-		this._stripeKey = value;
 	}
 }
